@@ -11,10 +11,10 @@ defmodule ApiMockBee.RouterTest do
 
     assert conn.state == :sent
     assert conn.status == 200
-    assert conn.resp_body =~ "welcome"
+    assert conn.resp_body =~ "Hello world!"
   end
 
   test "simple configuration with a single get" do
-    
+
   end
 end

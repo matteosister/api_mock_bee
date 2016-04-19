@@ -34,6 +34,7 @@ defmodule ApiMockBee.Mixfile do
   defp deps do
     [{:cowboy, "~> 1.0.0"},
      {:plug, "~> 1.1.3"},
-     {:poison, "~> 1.0"}]
+     {:poison, "~> 1.0"},
+     {:credo, "~> 0.3"}]
   end
 end

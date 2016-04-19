@@ -1,4 +1,8 @@
 defmodule ApiMockBee.Conf.Response do
+  @moduledoc """
+  struct module to represent a response
+  """
+
   use ApiMockBee.Aliases
 
   defstruct \
@@ -8,4 +12,6 @@ defmodule ApiMockBee.Conf.Response do
   def new do
     %Response{}
   end
+
+  def from_match_data(data), do: struct(Response, DataNormalizer.normalize(data))
 end

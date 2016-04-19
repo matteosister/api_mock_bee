@@ -3,7 +3,9 @@
     {
       "method": "get",
       "route": "/test",
-      "reponse": "welcome!"
+      "response": {
+        "body": "welcome!"
+      }
     }
   ]
 }
