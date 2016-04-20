@@ -1,4 +1,4 @@
-api:
+web:
     build: .
     volumes:
       - .:/code

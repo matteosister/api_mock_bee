@@ -9,6 +9,7 @@ defmodule ApiMockBee.Router do
 
   plug :match
   plug :dispatch
+  plug Plug.Logger, log: :debug
 
   def init(_) do
     IO.puts "Api Mock Bee"
@@ -22,13 +23,11 @@ defmodule ApiMockBee.Router do
 
   def send_response({:ok, match}, conn) do
     response = match.response
-    Logger.debug "#{match.route} matched - sent #{response.status_code}"
     conn
     |> default_headers
     |> send_resp(response.status_code, response.body)
   end
   def send_response({:error, _}, conn) do
-    Logger.debug "no route matched - sent 400"
     conn
     |> default_headers
     |> send_resp(400, "")
