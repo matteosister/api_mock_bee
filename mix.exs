@@ -18,7 +18,7 @@ defmodule ApiMockBee.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :cowboy, :plug],
+    [applications: [:logger, :cowboy, :plug, :poison],
      mod: {ApiMockBee, []}]
   end
 
@@ -35,6 +35,7 @@ defmodule ApiMockBee.Mixfile do
     [{:cowboy, "~> 1.0.0"},
      {:plug, "~> 1.1.3"},
      {:poison, "~> 1.0"},
-     {:credo, "~> 0.3"}]
+     {:credo, "~> 0.3"},
+     {:exrm, "~> 1.0"}]
   end
 end

@@ -1,12 +1,15 @@
-FROM msaraiva/elixir:1.2.2
+FROM alpine:3.3
+#FROM msaraiva/erlang:18.1
+MAINTAINER Matteo Giachino <matteog@gmail.com>
 
-EXPOSE 8080
-RUN apk -Uuv add erlang-inets erlang-ssl erlang-crypto erlang-public-key erlang-asn1 && \
-    rm -rf /var/cache/apk/*
+ENV VERSION=0.0.1
 
-WORKDIR /code
-RUN mix local.hex --force
-RUN mix hex.info
-#RUN mix local.rebar --force
+RUN apk --update --no-cache add ncurses
 
-CMD ["mix", "run", "--no-halt"]
+COPY rel/api_mock_bee/releases/$VERSION/api_mock_bee.tar.gz /tmp/api_mock_bee.tar.gz
+RUN mkdir /api_mock_bee && \
+    cd /api_mock_bee && \
+    tar -xzf /tmp/api_mock_bee.tar.gz
+
+#CMD ["/api_mock_bee/bin/api_mock_bee", "foreground"]
+CMD /api_mock_bee/bin/api_mock_bee foreground

@@ -4,7 +4,8 @@
       "method": "get",
       "route": "/test",
       "response": {
-        "body": "welcome!"
+        "body": "{\"test\":\"welcome!\"}",
+        "status_code": 200
       }
     }
   ]

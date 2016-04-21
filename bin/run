@@ -1,0 +1,1 @@
+docker run -ti -v /home/matteo/code/elixir/api_mock_bee/examples/conf.json:/conf.json -p 8080:8080 -e CONF_FILE=/conf.json matteosister/api-mock-bee:0.0.1

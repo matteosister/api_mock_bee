@@ -8,8 +8,8 @@ defmodule ApiMockBee.Router do
   require Logger
 
   plug :match
-  plug :dispatch
   plug Plug.Logger, log: :debug
+  plug :dispatch
 
   def init(_) do
     IO.puts "Api Mock Bee"
@@ -35,7 +35,7 @@ defmodule ApiMockBee.Router do
 
   defp default_headers(conn) do
     conn
-    |> put_resp_header("content-type", "application/json")
+    |> put_resp_content_type("application/json")
   end
 
   def read_configuration do

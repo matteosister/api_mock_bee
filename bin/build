@@ -1,0 +1,1 @@
+docker build -t matteosister/api-mock-bee:0.0.1 .
