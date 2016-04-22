@@ -11,5 +11,4 @@ RUN mkdir /api_mock_bee && \
     cd /api_mock_bee && \
     tar -xzf /tmp/api_mock_bee.tar.gz
 
-#CMD ["/api_mock_bee/bin/api_mock_bee", "foreground"]
 CMD /api_mock_bee/bin/api_mock_bee foreground

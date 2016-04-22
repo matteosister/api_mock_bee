@@ -15,6 +15,20 @@ defmodule ApiMockBee.Router do
     IO.puts "Api Mock Bee"
   end
 
+  defp templating_folder do
+    Path.expand "web/templates"
+  end
+
+  defp conf_template do
+    templating_folder <> "/conf.html.eex"
+  end
+
+  get "/conf" do
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_resp(200, File.read!(conf_template))
+  end
+
   match _ do
     conn
     |> Matcher.match(read_configuration)
@@ -30,7 +44,7 @@ defmodule ApiMockBee.Router do
   def send_response({:error, _}, conn) do
     conn
     |> default_headers
-    |> send_resp(400, "")
+    |> send_resp(404, "")
   end
 
   defp default_headers(conn) do
