@@ -29,6 +29,12 @@ defmodule ApiMockBee.Router do
     |> send_resp(200, File.read!(conf_template))
   end
 
+  get "/conf.json" do
+    conn
+    |> put_resp_content_type("application/json")
+    |> send_resp(200, read_configuration)
+  end
+
   match _ do
     conn
     |> Matcher.match(read_configuration)

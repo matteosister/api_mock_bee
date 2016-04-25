@@ -14,9 +14,4 @@ defmodule ApiMockBee.Matcher do
 
   defp choose_best_match([]), do: {:error, nil}
   defp choose_best_match([first | _]), do: {:ok, first}
-
-  defp match_filter(%Match{method: "get"}) do
-    true
-  end
-  defp match_filter(_), do: false
 end
