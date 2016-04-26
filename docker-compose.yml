@@ -1,8 +1,17 @@
 web:
-    build: docker/
-    volumes:
-      - .:/code
-    ports:
-      - "8080:8080"
-    environment:
-      CONF_FILE: "/code/examples/conf.json"
+  build: docker/web/
+  volumes:
+    - .:/code
+  ports:
+    - "8080:8080"
+  links:
+    - webpack
+  environment:
+    CONF_FILE: "/code/examples/conf.json"
+
+webpack:
+  image: node:4
+  volumes:
+    - .:/code
+  working_dir: /code
+  command: ./node_modules/.bin/webpack --progress --watch

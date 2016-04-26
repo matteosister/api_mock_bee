@@ -7,6 +7,10 @@ defmodule ApiMockBee.Router do
   use ApiMockBee.Aliases
   require Logger
 
+  plug Plug.Static,
+    at: "public",
+    from: :api_mock_bee,
+    only: ~w(js)
   plug :match
   plug Plug.Logger, log: :debug
   plug :dispatch

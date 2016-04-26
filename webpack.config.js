@@ -4,7 +4,7 @@ module.exports = {
     context: __dirname + "/web/js",
     entry: "./main",
     output: {
-        path: __dirname + "/web/dist",
+        path: __dirname + "/priv/static",
         filename: "bundle.js"
     },
     module: {
