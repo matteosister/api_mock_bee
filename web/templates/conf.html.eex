@@ -16,9 +16,15 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <form class="form-inline">
+          <h2>Matchers</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="matchers"></div>
+          <!-- <form class="form-inline">
             <fieldset class="form-group">
-              <label for="request_method">Request Method</label>
+              <label for="request_method">Method</label>
               <select class="form-control" id="exampleSelect1">
                 <option>GET</option>
                 <option>POST</option>
@@ -28,7 +34,7 @@
                 <option>OPTIONS</option>
               </select>
             </fieldset>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

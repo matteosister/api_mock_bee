@@ -1,4 +1,9 @@
+import React from 'react'
 import { createStore } from 'redux'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import Matcher from 'bee/components/matcher'
+
 
 /**
  * This is a reducer, a pure function with (state, action) => state signature.
@@ -12,20 +17,23 @@ import { createStore } from 'redux'
  * follows a different convention (such as function maps) if it makes sense for your
  * project.
  */
-function counter(state = 0, action) {
+function counter(state = [], action) {
   switch (action.type) {
-  case 'INCREMENT':
-    return state + 1
-  case 'DECREMENT':
-    return state - 1
-  default:
-    return state
+    default:
+      return state
   }
 }
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
 let store = createStore(counter)
+
+render(
+  <Provider store={store}>
+    <Matcher />
+  </Provider>,
+  document.getElementById('matchers')
+)
 
 // You can subscribe to the updates manually, or use bindings to your view layer.
 store.subscribe(() =>
@@ -34,9 +42,4 @@ store.subscribe(() =>
 
 // The only way to mutate the internal state is to dispatch an action.
 // The actions can be serialized, logged or stored and later replayed.
-store.dispatch({ type: 'INCREMENT' })
-// 1
-store.dispatch({ type: 'INCREMENT' })
-// 2
-store.dispatch({ type: 'DECREMENT' })
-// 1
+// store.dispatch({ type: 'INCREMENT' })

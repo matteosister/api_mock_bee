@@ -10,7 +10,7 @@ web:
     CONF_FILE: "/code/examples/conf.json"
 
 webpack:
-  image: node:4
+  image: node:6
   volumes:
     - .:/code
   working_dir: /code

@@ -21,5 +21,10 @@ module.exports = {
     },
     watchOptions: {
         ignore: /node_modules/
+    },
+    resolve: {
+        alias: {
+            bee: __dirname + "/web/js"
+        }
     }
 }
