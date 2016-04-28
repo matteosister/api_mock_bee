@@ -7,37 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-3">Api Mock Bee</h1>
-          <p class="lead">mock your endpoints and have fun!</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <h2>Matchers</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="matchers"></div>
-          <!-- <form class="form-inline">
-            <fieldset class="form-group">
-              <label for="request_method">Method</label>
-              <select class="form-control" id="exampleSelect1">
-                <option>GET</option>
-                <option>POST</option>
-                <option>PUT</option>
-                <option>DELETE</option>
-                <option>PACTH</option>
-                <option>OPTIONS</option>
-              </select>
-            </fieldset>
-          </form> -->
-        </div>
-      </div>
-    </div>
+    <div id="bee"></div>
     <script src="/public/bundle.js"></script>
   </body>
 </html>

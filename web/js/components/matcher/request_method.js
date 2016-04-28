@@ -1,17 +1,18 @@
 import React from 'react'
+import { FormGroup, FormControl } from 'react-bootstrap'
 
 const RequestMethod = () => (
-  <fieldset className="form-group">
-    <label for="request_method">Method</label>
-    <select className="form-control" id="request_method">
+  <FormGroup controlId="route">
+    <FormControl componentClass="select"
+      placeholder="method">
       <option>GET</option>
       <option>POST</option>
       <option>PUT</option>
       <option>DELETE</option>
       <option>PACTH</option>
       <option>OPTIONS</option>
-    </select>
-  </fieldset>
+    </FormControl>
+  </FormGroup>
 )
 
 export default RequestMethod

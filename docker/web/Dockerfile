@@ -1,4 +1,4 @@
-FROM msaraiva/elixir-dev:1.2.2
+FROM msaraiva/elixir-dev:1.2.4
 
 EXPOSE 8080
 RUN apk -Uuv add erlang-inets erlang-ssl erlang-crypto erlang-public-key erlang-asn1 nodejs && \
