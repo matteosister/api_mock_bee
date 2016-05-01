@@ -5,7 +5,7 @@ const Route = () => (
   <FormGroup controlId="route">
     <FormControl
       type="text"
-      placeholder="Route matcher" />
+      placeholder="/foo/bar" />
   </FormGroup>
 )
 
