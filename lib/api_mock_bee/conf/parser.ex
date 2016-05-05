@@ -15,7 +15,7 @@ defmodule ApiMockBee.Conf.Parser do
   end
 
   defp parse_matches({:error, _}), do: @default_match
-  defp parse_matches({:ok, %{"matches" => matches}}) do
+  defp parse_matches({:ok, %{"matchers" => matches}}) do
     do_parse_matches [], matches
   end
 

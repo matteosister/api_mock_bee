@@ -2,12 +2,10 @@ import React from 'react'
 import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import Matcher from 'bee/view/matcher'
+import MatchersList from 'bee/view/matchers_list'
 import { Grid, Jumbotron, Row, Col } from 'react-bootstrap'
-import bee from 'bee/reducers'
 import {fetchMatchers} from 'bee/actions'
-
-let store = createStore(bee)
+import store from 'bee/store'
 
 render(
   <Provider store={store}>
@@ -23,7 +21,7 @@ render(
           <h2>Matchers</h2>
         </Col>
       </Row>
-      <Matcher />
+      <MatchersList />
     </Grid>
   </Provider>,
   document.getElementById('bee')

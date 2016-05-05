@@ -1,5 +1,5 @@
 {
-  "matches": [
+  "matchers": [
     {
       "method": "get",
       "route": "/test",

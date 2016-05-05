@@ -1,7 +1,7 @@
 const Immutable = require("immutable")
 
 const initialState = Immutable.Map({
-  matchers: Immutable.List()
+  matchers: Immutable.List([])
 })
 
 export default initialState
